@@ -16,7 +16,6 @@ function App() {
     axios
       .get("https://api.github.com/search/repositories?q=stars:%3E1&sort=stars")
       .then((response) => {
-        console.log(response.data.items);
         setTopRepositories(response.data.items);
       })
       .catch((err) => {

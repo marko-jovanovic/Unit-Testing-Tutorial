@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> match snapshot 1`] = `
+<div
+  className="App"
+>
+  <h1>
+    Top GitHub repos:
+  </h1>
+  <div
+    className="repo-list"
+  />
+</div>
+`;
