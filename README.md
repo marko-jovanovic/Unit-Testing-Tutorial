@@ -84,13 +84,15 @@ export default function TopGitHubRepos() {
 
   return (
     <>
-      {/* We don't want to test if someting has applied class or not since this can make our test cumbersome */}
+      {/* We don't want to test if someting has applied class or not */}
+      {/* since this can make our test cumbersome */}
       <div className="App">
         <h1>Top GitHub repos:</h1>
 
         <div className="repo-list">
-          {/* Here we use another component we wrote called RepositoryItem, but this is a UNIT for itself so we don't */}
-          {/* neet to test any logic contained within the RepositoryItem component. */}
+          {/* Here we use another component we wrote called RepositoryItem, */}
+          {/* but this is a UNIT for itself so we don't neet to test any logic contained */}
+          {/* within the RepositoryItem component. */}
           {topRepositories.map((repo: any) => (
             <RepositoryItem
               key={repo.id}
@@ -135,7 +137,8 @@ const mockAxios = axios as jest.Mocked<typeof axios>;
 
 // It is a good practise to first describe what is being tested: component, class, hook, etc.
 describe('<TopGitHubRepos />', () => {
-  // Since we mocked out 'axios' module, we now need to define a default behaviour for it or otherwise it will throw an error
+  // Since we mocked out 'axios' module, we now need to define a default
+  // behaviour for it or otherwise it will throw an error
   beforeEach(() => {
     mockAxios.get.mockResolvedValue({
       data: {
@@ -150,7 +153,8 @@ describe('<TopGitHubRepos />', () => {
   it('renders learn react link', async () => {
     render(<TopGitHubRepos />);
 
-    // Since the mocked response is Promise-based we need to wait for an event loop to finish rendering and firing all hooks
+    // Since the mocked response is Promise-based we need to wait for an
+    // event loop to finish rendering and firing all hooks
     await act(async () => {
       await new Promise(resolve => setTimeout(resolve, 0));
     });
